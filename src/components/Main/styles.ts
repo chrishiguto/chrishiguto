@@ -1,33 +1,39 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+import * as HeadingStyles from 'components/Heading/styles'
+import { Container } from 'components/Container'
 
 export const Wrapper = styled.main`
-  background-color: #06092b;
-  color: #fff;
-  width: 100%;
-  height: 100%;
-  padding: 3rem;
-  text-align: center;
+  ${({ theme }) => css`
+    background-color: ${theme.colors.black};
+    color: ${theme.colors.white};
+    width: 100%;
+    height: 100%;
+  `}
+`
+
+export const Name = styled.span`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xlarge};
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    opacity: 0.5;
+  `}
+`
+
+export const SectionInfo = styled(Container)`
+  height: calc(100vh - 5.6rem);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
 `
 
-export const Logo = styled.img`
-  width: 25rem;
-  margin-bottom: 2rem;
-`
+export const Information = styled.div`
+  margin-top: -18rem;
 
-export const Title = styled.h1`
-  font-size: 2.5rem;
-`
-
-export const Description = styled.h2`
-  font-size: 2rem;
-  font-weight: 400;
-`
-
-export const Illustration = styled.img`
-  margin-top: 3rem;
-  width: min(30rem, 100%);
+  ${HeadingStyles.Wrapper} {
+    margin-top: 0.8rem;
+    > span {
+      color: #f26600;
+    }
+  }
 `
