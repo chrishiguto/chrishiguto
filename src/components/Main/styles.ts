@@ -22,7 +22,7 @@ export const Name = styled.span`
 `
 
 export const SectionInfo = styled(Container)`
-  height: calc(100vh - 7.2rem);
+  height: 100%;
   display: flex;
   align-items: center;
 `
