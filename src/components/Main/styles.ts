@@ -5,6 +5,9 @@ import { Container } from 'components/Container'
 
 export const Wrapper = styled.main`
   ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+
     background-color: ${theme.colors.black};
     color: ${theme.colors.white};
     width: 100%;
@@ -22,7 +25,7 @@ export const Name = styled.span`
 `
 
 export const SectionInfo = styled(Container)`
-  height: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
 `
