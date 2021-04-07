@@ -6,7 +6,7 @@ import * as S from './styles'
 const Menu = () => (
   <S.Wrapper>
     <Container>
-      <Heading size="medium">chrishiguto.</Heading>
+      <Heading size="medium">ch.</Heading>
     </Container>
   </S.Wrapper>
 )

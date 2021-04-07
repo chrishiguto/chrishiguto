@@ -4,7 +4,7 @@ type WrapperProps = {
   size?: 'small' | 'medium' | 'large' | 'huge'
 }
 
-const wrapperModifiers = {
+export const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.small};
   `,
@@ -15,6 +15,10 @@ const wrapperModifiers = {
 
   large: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.large};
+  `,
+
+  xxxlarge: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.xxxlarge};
   `,
 
   huge: (theme: DefaultTheme) => css`
