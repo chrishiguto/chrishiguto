@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
 type WrapperProps = {
-  size?: 'small' | 'medium' | 'large' | 'huge'
+  size?: 'small' | 'medium' | 'large' | 'xxxlarge' | 'huge'
 }
 
 export const wrapperModifiers = {
