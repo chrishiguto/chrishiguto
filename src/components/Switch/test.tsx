@@ -1,13 +1,15 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import Switch from '.'
 
+const props = {
+  checked: true,
+  handleClick: jest.fn()
+}
+
 describe('<Switch />', () => {
   it('should render the heading', () => {
-    const { container } = render(<Switch />)
-
-    expect(screen.getByRole('heading', { name: /Switch/i })).toBeInTheDocument()
-
-    expect(container.firstChild).toMatchSnapshot()
+    renderWithTheme(<Switch {...props} />)
   })
 })

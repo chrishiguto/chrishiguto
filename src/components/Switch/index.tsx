@@ -3,8 +3,8 @@ import * as S from './styles'
 export type SwitchProps = {
   checked: boolean
   handleClick: () => void
-  activeIcon: React.ReactNode
-  inactiveIcon: React.ReactNode
+  activeIcon?: React.ReactNode
+  inactiveIcon?: React.ReactNode
 }
 
 const Switch = ({

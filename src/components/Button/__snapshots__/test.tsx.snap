@@ -7,18 +7,18 @@ exports[`<Button /> should render the button 1`] = `
   outline: none;
   border: none;
   cursor: pointer;
-  border: 0.1rem solid rgba(255,255,255,0.4);
+  border: 0.1rem solid rgba(0,0,0,0.4);
   border-radius: 0.4rem;
   -webkit-transition: border 0.2s;
   transition: border 0.2s;
 }
 
 .c0:hover {
-  border: 0.1rem solid rgba(255,255,255,0.2);
+  border: 0.1rem solid rgba(0,0,0,0.2);
 }
 
 .c1 > svg {
-  color: #FAFAFA;
+  color: #1d1d1d;
 }
 
 <button

@@ -4,11 +4,11 @@ import { ThemeProvider as SCThemeProvider } from 'styled-components'
 import theme from 'styles/theme'
 
 type ThemeContextData = {
-  setUserTheme: (theme: ThemeProps) => void
-  userTheme: 'dark' | 'light'
+  toggleTheme: () => void
+  userTheme: ThemeProps
 }
 
-type ThemeProps = 'dark' | 'light'
+export type ThemeProps = 'dark' | 'light'
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
@@ -23,12 +23,14 @@ const ThemeProvider: React.FC = ({ children }) => {
     return selectedTheme
   })
 
-  const setUserTheme = useCallback((theme: ThemeProps) => {
-    setTheme(theme)
+  const toggleTheme = useCallback(() => {
+    setTheme((prevState: ThemeProps) =>
+      prevState === 'dark' ? 'light' : 'dark'
+    )
   }, [])
 
   return (
-    <ThemeContext.Provider value={{ userTheme, setUserTheme }}>
+    <ThemeContext.Provider value={{ userTheme, toggleTheme }}>
       <SCThemeProvider theme={userTheme === 'dark' ? theme.dark : theme.light}>
         {children}
       </SCThemeProvider>
