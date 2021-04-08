@@ -10,10 +10,12 @@ export const Wrapper = styled.main`
     display: flex;
     flex-direction: column;
 
-    background-color: ${theme.colors.black};
-    color: ${theme.colors.white};
+    background-color: ${theme.colors.mainBg};
+    color: ${theme.colors.mainText};
     width: 100%;
     height: 100%;
+
+    transition: background-color 0.3s;
   `}
 `
 
@@ -63,9 +65,19 @@ export const About = styled(Section)`
 
 export const Footer = styled.div`
   ${({ theme }) => css`
-    border-top: 1px solid ${theme.colors.darkGray};
-    height: 20rem;
+    border-top: 1px solid ${theme.colors.border};
+    height: 12rem;
     padding: 3.2rem 0;
+
+    ${media.greaterThan('medium')`
+      height: 16rem;
+    `}
+  `}
+`
+
+export const Email = styled.p`
+  ${({ theme }) => css`
+    color: ${theme.colors.gray};
   `}
 `
 

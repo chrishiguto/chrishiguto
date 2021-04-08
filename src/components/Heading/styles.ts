@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
 type WrapperProps = {
-  size?: 'small' | 'medium' | 'large' | 'xxxlarge' | 'huge'
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | 'huge'
 }
 
 export const wrapperModifiers = {
@@ -17,8 +17,8 @@ export const wrapperModifiers = {
     font-size: ${theme.font.sizes.large};
   `,
 
-  xxxlarge: (theme: DefaultTheme) => css`
-    font-size: ${theme.font.sizes.xxxlarge};
+  xlarge: (theme: DefaultTheme) => css`
+    font-size: calc(${theme.font.sizes.large} * 2);
   `,
 
   huge: (theme: DefaultTheme) => css`

@@ -17,7 +17,7 @@ const Main = () => (
       <S.About>
         <S.Information>
           <S.Name>Christiano Higuto</S.Name>
-          <Heading size="xxxlarge">
+          <Heading size="xlarge">
             Front-end Developer @ <span>ClubPetro</span>
           </Heading>
         </S.Information>
@@ -30,7 +30,7 @@ const Main = () => (
 
       <S.Footer>
         <Container>
-          <Heading size="small">chrisshiguto@gmail.com</Heading>
+          <Heading size="small">christiano.higuto@clubpetro.com</Heading>
         </Container>
       </S.Footer>
     </S.Content>

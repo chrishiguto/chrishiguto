@@ -2,25 +2,27 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.button`
   ${({ theme }) => css`
-    padding: 8px 16px;
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.xsmall};
     background: transparent;
     outline: none;
     border: none;
     cursor: pointer;
 
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 4px;
+    border: 0.1rem solid ${theme.colors.border};
+    border-radius: ${theme.border.radius};
 
     transition: border 0.2s;
 
     &:hover {
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 0.1rem solid ${theme.colors.borderHover};
     }
   `}
 `
 
 export const Icon = styled.div`
-  > svg {
-    color: #fff;
-  }
+  ${({ theme }) => css`
+    > svg {
+      color: ${theme.colors.mainText};
+    }
+  `}
 `

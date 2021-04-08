@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render the button 1`] = `
+.c0 {
+  padding: 0.8rem 1.6rem;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border: 0.1rem solid rgba(255,255,255,0.4);
+  border-radius: 0.4rem;
+  -webkit-transition: border 0.2s;
+  transition: border 0.2s;
+}
+
+.c0:hover {
+  border: 0.1rem solid rgba(255,255,255,0.2);
+}
+
+.c1 > svg {
+  color: #FAFAFA;
+}
+
+<button
+  class="c0"
+>
+  <div
+    class="c1"
+  />
+  Button label
+</button>
+`;

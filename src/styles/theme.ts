@@ -1,4 +1,4 @@
-export default {
+const common = {
   grid: {
     container: '130rem',
     gutter: '3.2rem'
@@ -19,21 +19,8 @@ export default {
       large: '1.8rem',
       xlarge: '2.0rem',
       xxlarge: '2.8rem',
-      xxxlarge: '3.2rem',
       huge: '4.8rem'
     }
-  },
-  colors: {
-    primary: '#F231A5',
-    secondary: '#3CD3C1',
-    mainBg: '#06092B',
-    lightBg: '#F2F2F2',
-    white: '#FAFAFA',
-    black: '#000814',
-    lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
-    darkGray: '#2E2F42',
-    red: '#FF6347'
   },
   spacings: {
     xxsmall: '0.8rem',
@@ -55,4 +42,39 @@ export default {
     default: '0.3s ease-in-out',
     fast: '0.1s ease-in-out'
   }
+}
+
+const dark = {
+  ...common,
+  colors: {
+    border: 'rgba(255, 255, 255, 0.4)',
+    borderHover: 'rgba(255, 255, 255, 0.2)',
+    mainBg: '#1d1d1d',
+    mainText: '#F2F2F2',
+    white: '#FAFAFA',
+    black: '#1d1d1d',
+    lightGray: '#EAEAEA',
+    gray: '#8F8F8F',
+    darkGray: '#333333'
+  }
+}
+
+const light = {
+  ...common,
+  colors: {
+    border: 'rgba(0, 0, 0, 0.4)',
+    borderHover: 'rgba(0, 0, 0, 0.2)',
+    mainBg: '#F2F2F2',
+    mainText: '#1d1d1d',
+    white: '#FAFAFA',
+    black: '#1d1d1d',
+    lightGray: '#EAEAEA',
+    gray: '#8F8F8F',
+    darkGray: '#333333'
+  }
+}
+
+export default {
+  dark,
+  light
 } as const
