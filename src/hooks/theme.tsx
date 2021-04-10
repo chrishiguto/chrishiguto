@@ -11,7 +11,7 @@ import theme from 'styles/theme'
 
 type ThemeContextData = {
   toggleTheme: () => void
-  userTheme: ThemeProps
+  userTheme: ThemeProps | undefined
 }
 
 export type ThemeProps = 'dark' | 'light'
