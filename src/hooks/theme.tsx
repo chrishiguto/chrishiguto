@@ -19,10 +19,10 @@ export type ThemeProps = 'dark' | 'light'
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
 const ThemeProvider: React.FC = ({ children }) => {
-  const [userTheme, setTheme] = useState<ThemeProps>()
+  const [userTheme, setTheme] = useState<ThemeProps | undefined>()
 
   const toggleTheme = useCallback(() => {
-    setTheme((prevState: ThemeProps) => {
+    setTheme((prevState: ThemeProps | undefined) => {
       const root = window.document.documentElement
 
       const newState = prevState === 'dark' ? 'light' : 'dark'
