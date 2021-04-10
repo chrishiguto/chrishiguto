@@ -17,12 +17,14 @@ const Menu = () => {
       <Container>
         <S.Menu>
           <Heading size="large">ch.</Heading>
-          <Switch
-            activeIcon={<Moon size={16} strokeWidth={2} />}
-            inactiveIcon={<Sun size={16} strokeWidth={2} />}
-            checked={userTheme === 'light'}
-            handleClick={toggleTheme}
-          />
+          {!!userTheme && (
+            <Switch
+              activeIcon={<Moon size={16} strokeWidth={2} />}
+              inactiveIcon={<Sun size={16} strokeWidth={2} />}
+              checked={userTheme === 'light'}
+              handleClick={toggleTheme}
+            />
+          )}
         </S.Menu>
       </Container>
     </S.Wrapper>

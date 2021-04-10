@@ -8,21 +8,19 @@ export const Wrapper = styled.button`
     border: none;
     cursor: pointer;
 
-    border: 0.1rem solid ${theme.colors.border};
+    border: 0.1rem solid var(--border-color);
     border-radius: ${theme.border.radius};
 
     transition: border 0.2s;
 
     &:hover {
-      border: 0.1rem solid ${theme.colors.borderHover};
+      border: 0.1rem solid var(--border-hover-color);
     }
   `}
 `
 
 export const Icon = styled.div`
-  ${({ theme }) => css`
-    > svg {
-      color: ${theme.colors.mainText};
-    }
-  `}
+  > svg {
+    color: var(--text-color);
+  }
 `
