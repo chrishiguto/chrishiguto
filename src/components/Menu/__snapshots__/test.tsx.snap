@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Menu /> should render the menu 1`] = `
+exports[`<Menu /> should render the menu without switch button 1`] = `
 .c1 {
   width: 100%;
   max-width: 130rem;

@@ -13,7 +13,7 @@ const Switch = ({
   activeIcon,
   inactiveIcon
 }: SwitchProps) => (
-  <S.Wrapper onClick={handleClick}>
+  <S.Wrapper onClick={handleClick} aria-label="Switch button">
     <S.Circle checked={checked}>
       {!!activeIcon && checked && activeIcon}
       {!!inactiveIcon && !checked && inactiveIcon}

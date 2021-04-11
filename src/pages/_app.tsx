@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { ThemeProvider } from 'hooks/theme'
+import { ThemeProvider } from 'hooks/theme/theme'
 
 import theme from 'styles/theme'
 
@@ -74,7 +74,7 @@ function App({ Component, pageProps }: AppProps) {
         ></meta>
         <meta
           name="description"
-          content="A simple project starter to work with TypeScript, React, NextJS and Styled Components"
+          content="Welcome! This is my website - Christiano Higuto."
         />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switch /> should render the switch 1`] = `
+.c0 {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 4.4rem;
+  height: 2.4rem;
+  background-color: #8F8F8F;
+  border-radius: 2.2rem;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: #FAFAFA;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(2.2rem);
+  -ms-transform: translateX(2.2rem);
+  transform: translateX(2.2rem);
+}
+
+<button
+  aria-label="Switch button"
+  class="c0"
+>
+  <div
+    class="c1"
+  />
+</button>
+`;

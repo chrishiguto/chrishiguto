@@ -1,7 +1,7 @@
 import { Sun } from '@styled-icons/feather/Sun'
 import { Moon } from '@styled-icons/feather/Moon'
 
-import { useTheme, ThemeProps } from 'hooks/theme'
+import { useTheme } from 'hooks/theme/theme'
 
 import { Container } from 'components/Container'
 import Heading from 'components/Heading'

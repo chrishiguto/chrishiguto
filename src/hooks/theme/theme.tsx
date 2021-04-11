@@ -80,10 +80,6 @@ const ThemeProvider: React.FC = ({ children }) => {
 const useTheme = () => {
   const context = useContext(ThemeContext)
 
-  if (!context) {
-    throw new Error('Must be used within a ThemeProvider component')
-  }
-
   return context
 }
 
