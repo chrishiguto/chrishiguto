@@ -1,5 +1,11 @@
-import Main from 'components/Main'
+import Header from 'components/Header'
+import SectionHero from 'components/SectionHero'
 
 export default function Home() {
-  return <Main />
+  return (
+    <>
+      <Header />
+      <SectionHero />
+    </>
+  )
 }

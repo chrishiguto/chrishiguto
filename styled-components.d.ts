@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import theme from 'styles/theme'
 
-type Theme = typeof theme.dark
+type Theme = typeof theme
 
 declare module 'styled-components' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface

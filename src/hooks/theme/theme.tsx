@@ -3,7 +3,8 @@ import React, {
   useState,
   useCallback,
   useContext,
-  useEffect
+  useEffect,
+  ReactNode
 } from 'react'
 import { ThemeProvider as SCThemeProvider } from 'styled-components'
 
@@ -18,7 +19,11 @@ export type ThemeProps = 'dark' | 'light'
 
 const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
-const ThemeProvider: React.FC = ({ children }) => {
+type ThemeProviderProps = {
+  children: ReactNode
+}
+
+const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [userTheme, setTheme] = useState<ThemeProps | undefined>()
 
   const toggleTheme = useCallback(() => {
@@ -27,30 +32,11 @@ const ThemeProvider: React.FC = ({ children }) => {
 
       const newState = prevState === 'dark' ? 'light' : 'dark'
 
-      root.style.setProperty(
-        '--text-color',
-        newState === 'light'
-          ? theme.light.colors.mainText
-          : theme.dark.colors.mainText
-      )
-      root.style.setProperty(
-        '--background-color',
-        newState === 'light'
-          ? theme.light.colors.mainBg
-          : theme.dark.colors.mainBg
-      )
-      root.style.setProperty(
-        '--border-color',
-        newState === 'light'
-          ? theme.light.colors.border
-          : theme.dark.colors.border
-      )
-      root.style.setProperty(
-        '--border-hover-color',
-        newState === 'light'
-          ? theme.light.colors.borderHover
-          : theme.dark.colors.borderHover
-      )
+      Object.entries(theme.colors[newState]).forEach(([name, color]) => {
+        const cssVarName = `--color-${name}`
+
+        root.style.setProperty(cssVarName, color)
+      })
 
       window.localStorage.setItem('theme', newState)
 
@@ -70,9 +56,7 @@ const ThemeProvider: React.FC = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ userTheme, toggleTheme }}>
-      <SCThemeProvider theme={userTheme === 'dark' ? theme.dark : theme.light}>
-        {children}
-      </SCThemeProvider>
+      <SCThemeProvider theme={theme}>{children}</SCThemeProvider>
     </ThemeContext.Provider>
   )
 }

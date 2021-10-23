@@ -8,13 +8,13 @@ export const Wrapper = styled.button`
     border: none;
     cursor: pointer;
 
-    border: 0.1rem solid var(--border-color);
+    border: 0.1rem solid var(--color-neutral50);
     border-radius: ${theme.border.radius};
 
     transition: border 0.2s;
 
     &:hover {
-      border: 0.1rem solid var(--border-hover-color);
+      border: 0.1rem solid var(--color-neutral60);
     }
   `}
 `

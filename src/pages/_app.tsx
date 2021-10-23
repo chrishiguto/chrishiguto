@@ -7,57 +7,48 @@ import theme from 'styles/theme'
 
 import GlobalStyles from 'styles/global'
 
-const themeScript = () => {
-  const codeToRunOnClient = `
-(function() {
-  function getInitialColorMode() {
-    const isBrowser = () => typeof window !== 'undefined'
+type ThemeProps = typeof theme
 
-    if (isBrowser()) {
-      const persistedColorPreference = window.localStorage.getItem('theme')
+function setColorsByTheme() {
+  const colors: ThemeProps = {} as ThemeProps
+  const isBrowser = typeof window !== 'undefined'
 
-      if (persistedColorPreference) {
-        return persistedColorPreference
-      }
+  let colorMode = 'dark'
 
-      const mql = window.matchMedia('(prefers-color-scheme: dark)')
+  if (isBrowser) {
+    const persistedColorPreference = window.localStorage.getItem('theme')
+    const mql = window.matchMedia('(prefers-color-scheme: dark)')
 
-      if (mql.matches) {
-        return mql.matches ? 'dark' : 'light'
-      }
+    if (mql.matches) {
+      colorMode = mql.matches ? 'dark' : 'light'
     }
 
-    return 'dark'
+    console.log(persistedColorPreference)
+
+    if (persistedColorPreference) {
+      colorMode = persistedColorPreference
+    }
   }
-  const colorMode = getInitialColorMode();
-  const root = document.documentElement;
-  root.style.setProperty(
-    '--text-color',
-    colorMode === 'light'
-      ? '${theme.light.colors.mainText}'
-      : '${theme.dark.colors.mainText}'
-  );
-  root.style.setProperty(
-    '--background-color',
-    colorMode === 'light'
-      ? '${theme.light.colors.mainBg}'
-      : '${theme.dark.colors.mainBg}'
-  );
-  root.style.setProperty(
-    '--border-color',
-    colorMode === 'light'
-      ? '${theme.light.colors.border}'
-      : '${theme.dark.colors.border}'
-  );
-  root.style.setProperty(
-    '--border-hover-color',
-    colorMode === 'light'
-      ? '${theme.light.colors.borderHover}'
-      : '${theme.dark.colors.borderHover}'
-  );
-  root.style.setProperty('--initial-color-mode', colorMode);
-})()`
-  // eslint-disable-next-line react/no-danger
+
+  const root = document.documentElement
+
+  root.style.setProperty('--initial-color-mode', colorMode)
+
+  Object.entries(colors[colorMode as keyof typeof theme]).forEach((item) => {
+    const cssVarName = `--color-${item[0]}`
+
+    root.style.setProperty(cssVarName, item[1])
+  })
+}
+
+const scriptTag = () => {
+  const boundFn = String(setColorsByTheme).replace(
+    '{}',
+    JSON.stringify(theme.colors)
+  )
+
+  const codeToRunOnClient = `(${boundFn})()`
+
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />
 }
 
@@ -81,7 +72,7 @@ function App({ Component, pageProps }: AppProps) {
           href="https://fonts.googleapis.com/css2?family=Recursive:wght@300;500&display=swap"
           rel="stylesheet"
         />
-        {themeScript()}
+        {scriptTag()}
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />

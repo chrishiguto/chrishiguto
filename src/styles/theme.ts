@@ -1,6 +1,10 @@
 const common = {
   grid: {
-    container: '130rem',
+    container: {
+      small: '90rem',
+      medium: '110rem',
+      large: '130rem'
+    },
     gutter: '3.2rem'
   },
   border: {
@@ -45,36 +49,47 @@ const common = {
 }
 
 const dark = {
-  ...common,
-  colors: {
-    border: 'rgba(255, 255, 255, 0.4)',
-    borderHover: 'rgba(255, 255, 255, 0.2)',
-    mainBg: '#1d1d1d',
-    mainText: '#F2F2F2',
-    white: '#FAFAFA',
-    black: '#1d1d1d',
-    lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
-    darkGray: '#333333'
-  }
+  neutral: '#333A44',
+  neutral5: '#3D444D',
+  neutral15: '#515760',
+  neutral20: '#5B6169',
+  neutral50: '#979BA2',
+  neutral60: '#ABAEB4',
+  neutral70: '#BFC2C7',
+  neutral80: '#D3D5DA',
+  neutral90: '#E7E9EC',
+  neutral100: '#FBFCFF',
+  white: '#FAFAFA',
+  text: '#F7F7F7',
+  background: '#141018',
+  header: 'rgba(0, 0, 0, 0.4)',
+  primary: '#892CDC',
+  secondary: '#03C4A1'
 }
 
 const light = {
-  ...common,
-  colors: {
-    border: 'rgba(0, 0, 0, 0.4)',
-    borderHover: 'rgba(0, 0, 0, 0.2)',
-    mainBg: '#F2F2F2',
-    mainText: '#1d1d1d',
-    white: '#FAFAFA',
-    black: '#1d1d1d',
-    lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
-    darkGray: '#333333'
-  }
+  neutral: '#FBFCFF',
+  neutral5: '#E7E9EC',
+  neutral15: '#D3D5DA',
+  neutral20: '#BFC2C7',
+  neutral50: '#ABAEB4',
+  neutral60: '#979BA2',
+  neutral70: '#5B6169',
+  neutral80: '#515760',
+  neutral90: '#3D444D',
+  neutral100: '#333A44',
+  white: '#FAFAFA',
+  text: '#1B262C',
+  background: '#F6F6F6',
+  header: 'rgba(255, 255, 255, 0.4)',
+  primary: '#6DDCCF',
+  secondary: '#161D6F'
 }
 
 export default {
-  dark,
-  light
+  ...common,
+  colors: {
+    dark,
+    light
+  }
 } as const

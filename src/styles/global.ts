@@ -14,6 +14,9 @@ const GlobalStyles = createGlobalStyle`
 
   html, body, #__next {
     height: 100%;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color 0.3s;
   }
 
   body {
