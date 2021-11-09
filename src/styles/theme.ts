@@ -64,7 +64,8 @@ const dark = {
   background: '#141018',
   header: 'rgba(0, 0, 0, 0.4)',
   primary: '#892CDC',
-  secondary: '#03C4A1'
+  secondary: '#03C4A1',
+  yellow: 'rgb(255, 255, 0)'
 }
 
 const light = {

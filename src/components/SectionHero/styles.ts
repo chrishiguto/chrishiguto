@@ -7,3 +7,8 @@ export const Wrapper = styled.section`
     padding: ${theme.spacings.large};
   `}
 `
+
+export const Link = styled.a`
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-yellow);
+`

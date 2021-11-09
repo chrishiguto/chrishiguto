@@ -8,14 +8,19 @@ const SectionHero = () => (
     <Container size="small">
       <Text>Oi,</Text>
       <Text>
-        Meu nome é Christiano, seja bem-vindo ao meu blog. Amo desenvolver e sou
-        entusiasta do mundo do empreendedorismo, acredito na força interna de
-        cada ser humano para realização de sonhos.
+        Meu nome é Christiano, seja bem-vindo ao meu site. Atuo como React
+        Developer no{' '}
+        <S.Link href="https://www.bees.com/" target="_blank">
+          <Emphasis>BEES</Emphasis>
+        </S.Link>
+        , uma célula tech que cria soluções para à operação da Ambev e AB InBev
+        :)
       </Text>
       <Text>
-        Atualmente atuo como desenvolvedor front end na{' '}
-        <Emphasis>Kenlo.io</Emphasis> há aproximadamente 3 meses.
+        Irei utilizar esse espaço para compartilhar conhecimentos, contar um
+        pouco sobre meu caminho até aqui e continuar aprendendo...
       </Text>
+      <Text>Em breve terá muito conteúdo por aqui!</Text>
     </Container>
   </S.Wrapper>
 )

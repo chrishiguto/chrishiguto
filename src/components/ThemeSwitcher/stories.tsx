@@ -1,14 +1,9 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Switch, { SwitchProps } from '.'
+import ThemeSwitcher from '.'
 
 export default {
-  title: 'Switch',
-  component: Switch
+  title: 'ThemeSwitcher',
+  component: ThemeSwitcher
 } as Meta
 
-export const Default: Story<SwitchProps> = (args) => <Switch {...args} />
-
-Default.args = {
-  checked: true,
-  handleClick: () => {}
-}
+export const Default: Story = () => <ThemeSwitcher />

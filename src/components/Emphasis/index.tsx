@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { ReactNode } from 'react'
 import * as S from './styles'
 
 export type EmphasisProps = {
