@@ -1,6 +1,6 @@
 ### <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30px"> Hello, I'm Christiano!
 
-💻 Frontend Developer at [inGaia](https://www.ingaia.com.br/) <br>
+💻 Frontend Developer at [BEES](https://www.bees.com/) <br>
 🏡 Brazilian, Based in Jundiaí, SP.
 
 ### About me
