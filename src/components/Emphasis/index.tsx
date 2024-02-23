@@ -1,11 +1,10 @@
 import { ReactNode } from 'react'
-import * as S from './styles'
 
 export type EmphasisProps = {
   children: ReactNode
 }
 
 const Emphasis = ({ children }: EmphasisProps) => {
-  return <S.Wrapper>{children}</S.Wrapper>
+  return <em className="text-secondary">{children}</em>
 }
 export default Emphasis

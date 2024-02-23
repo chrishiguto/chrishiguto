@@ -3,14 +3,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import { useTheme } from 'hooks/theme/theme'
 
-import * as S from './styles'
-
 const ThemeSwitcher = () => {
   const [active, setActive] = useState(false)
   const { toggleTheme } = useTheme()
 
   return (
-    <S.Wrapper
+    <button
+      className="flex bg-transparent cursor-pointer outline-none border-0"
       onClick={() => {
         setActive(!active)
         toggleTheme()
@@ -63,7 +62,7 @@ const ThemeSwitcher = () => {
           </motion.svg>
         )}
       </AnimatePresence>
-    </S.Wrapper>
+    </button>
   )
 }
 

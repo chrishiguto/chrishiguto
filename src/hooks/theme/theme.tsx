@@ -6,9 +6,6 @@ import React, {
   useEffect,
   ReactNode
 } from 'react'
-import { ThemeProvider as SCThemeProvider } from 'styled-components'
-
-import theme from 'styles/theme'
 
 type ThemeContextData = {
   toggleTheme: () => void
@@ -32,31 +29,33 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
       const newState = prevState === 'dark' ? 'light' : 'dark'
 
-      Object.entries(theme.colors[newState]).forEach(([name, color]) => {
-        const cssVarName = `--color-${name}`
-
-        root.style.setProperty(cssVarName, color)
-      })
-
       window.localStorage.setItem('theme', newState)
+
+      if (prevState === 'light') {
+        root.classList.add('dark')
+      } else {
+        root.classList.remove('dark')
+      }
 
       return newState
     })
   }, [])
 
   useEffect(() => {
-    const root = window.document.documentElement
-
-    const initialColorValue: ThemeProps = root.style.getPropertyValue(
-      '--initial-color-mode'
-    ) as ThemeProps
-
-    setTheme(initialColorValue)
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
   }, [])
 
   return (
     <ThemeContext.Provider value={{ userTheme, toggleTheme }}>
-      <SCThemeProvider theme={theme}>{children}</SCThemeProvider>
+      {children}
     </ThemeContext.Provider>
   )
 }

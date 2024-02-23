@@ -1,4 +1,4 @@
-import * as S from './styles'
+import cn from 'classnames'
 
 export type HeadingProps = {
   children: React.ReactNode
@@ -6,7 +6,17 @@ export type HeadingProps = {
 }
 
 const Heading = ({ children, size = 'small' }: HeadingProps) => (
-  <S.Wrapper size={size}>{children}</S.Wrapper>
+  <h2
+    className={cn('font-young text-text dark:text-text-dark', {
+      'text-sm': size === 'small',
+      'text-base': size === 'medium',
+      'text-lg': size === 'large',
+      'text-4xl': size === 'xlarge',
+      'text-6xl': size === 'huge'
+    })}
+  >
+    {children}
+  </h2>
 )
 
 export default Heading
