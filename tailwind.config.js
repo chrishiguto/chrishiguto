@@ -24,6 +24,7 @@ module.exports = {
         text: '#1B262C',
         'text-dark': '#F7F7F7',
         background: '#F6F6F6',
+        'background-dark': '#040303',
         header: 'rgba(255, 255, 255, 0.4)',
         primary: '#6DDCCF',
         secondary: '#161D6F',
@@ -40,7 +41,6 @@ module.exports = {
           neutral100: '#FBFCFF',
           white: '#FAFAFA',
           text: '#F7F7F7',
-          background: '#010101',
           header: 'rgba(0, 0, 0, 0.4)',
           primary: '#892CDC'
         }

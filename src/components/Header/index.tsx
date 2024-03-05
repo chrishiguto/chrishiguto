@@ -5,11 +5,11 @@ const Header = () => {
   return (
     <header className="sticky flex items-center h-20 top-0 z-50 backdrop-blur-sm">
       <Container>
-        <div className="flex justify-between">
-          <nav>
-            <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
+        <div className="flex">
+          <nav className="flex w-full">
+            <ul className="flex w-full justify-center space-x-8">
+              <li className="text-white text-xl uppercase">Home</li>
+              <li className="text-white text-xl uppercase">Blog</li>
             </ul>
           </nav>
           <ThemeSwitcher />

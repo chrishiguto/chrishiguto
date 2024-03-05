@@ -1,18 +1,21 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-import { useTheme } from 'hooks/theme/theme'
 
 const ThemeSwitcher = () => {
   const [active, setActive] = useState(false)
-  const { toggleTheme } = useTheme()
 
   return (
     <button
       className="flex bg-transparent cursor-pointer outline-none border-0"
       onClick={() => {
         setActive(!active)
-        toggleTheme()
+
+        if (document.documentElement.classList.contains('dark')) {
+          document.documentElement.classList.remove('dark')
+        } else {
+          document.documentElement.classList.add('dark')
+        }
       }}
     >
       <AnimatePresence>

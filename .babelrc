@@ -1,9 +1,0 @@
-{
-  "presets": ["next/babel", "@babel/preset-typescript"],
-  "plugins": [
-    ["transform-define", {
-      "process.env.NODE_ENV": "production",
-      "typeof window": "object"
-    }]
-  ]
-}
