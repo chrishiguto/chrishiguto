@@ -5,8 +5,8 @@
 
 ### About me
 
-I'm currently learning Rust 🦀.
-In my free time I like to watch soccer ⚽ and cook 👨‍🍳. I also like to drink beer and see new places. ✈️
+- Tech enthusiast and currently diving into the world of Rust 🦀 and WASM 0️⃣1️⃣.
+- In my free time I like to watch soccer ⚽ and cook 👨‍🍳. I also like to drink beer and see new places. ✈️
 
 ### You can find me on
 
